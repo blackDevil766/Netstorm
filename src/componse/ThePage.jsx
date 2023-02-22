@@ -6,7 +6,7 @@ import AOS from "aos";
 
 
 
-var lastScrollY = window.scroll(0,1);
+var lastScrollY = window.scroll(0, 1);
 
 window.addEventListener("scroll", () => {
 
@@ -104,22 +104,26 @@ function NavBar() {
     AOS.init();
 
     return (
-        
+
         <div className="section1">
+            
             <nav id="nav-section" className="navbar navbar-expand-lg navbar-light ">
 
-                <div id="Navcontiner" className="container-fluid">
-                    <img  data-aos="flip-left" data-aos-duration="1000" id="nav-logo" className="navbar navbar-brand" src="https://netstrom-angular.theme-land.com/assets/img/logo.png" alt="" />
 
-                    <div id="collopas" className="collapse navbar-collapse">
+                <div id="collopas" className="collapse navbar-collapse">
+                    <div id="Navcontiner" className="container-fluid">
+                        <img data-aos="flip-left" data-aos-duration="1000" id="nav-logo" className="navbar navbar-brand" src="https://netstrom-angular.theme-land.com/assets/img/logo.png" alt="" />
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
                         <ul id="nav-items" className="navbar-nav">
 
-                            <NavProps daley = "250" class="nav-link" text="Home" />
+                            <NavProps daley="250" class="nav-link" text="Home" />
 
                             <div className="exploreItemInNavs">
-                                <NavProps daley = "500" over={mouseOver1} out={mouseOut1} class="nav-link exploreItemInNav" text="Explore" ico={<i className="arrowIcon1  far fa-chevron-down"></i>} />
+                                <NavProps daley="500" over={mouseOver1} out={mouseOut1} class="nav-link exploreItemInNav" text="Explore" ico={<i className="arrowIcon1  far fa-chevron-down"></i>} />
 
-                                
+
                                 <div className="exploreShowingItem">
                                     <ul className="itemss" onMouseOver={itemsmouseOver} onMouseOut={itemsmouseOut}>
                                         <li className="navHoverdItem">Explore Style 1</li>
@@ -132,10 +136,10 @@ function NavBar() {
                                 </div>
                             </div>
 
-                            <NavProps daley = "750" class="nav-link" text="Activity" />
+                            <NavProps daley="750" class="nav-link" text="Activity" />
 
                             <div className="communityItemInNavs">
-                                <NavProps daley = "1000" over={mouseOver2} out={mouseOut2} class="nav-link communityItemInNav" text="Community" ico={<i className="arrowIcon2  far fa-chevron-down"></i>} />
+                                <NavProps daley="1000" over={mouseOver2} out={mouseOut2} class="nav-link communityItemInNav" text="Community" ico={<i className="arrowIcon2  far fa-chevron-down"></i>} />
 
                                 <div className="communityShowingItem">
                                     <ul className="itemss" onMouseOver={itemsmouseOver2} onMouseOut={itemsmouseOut2}>
@@ -147,7 +151,7 @@ function NavBar() {
                             </div>
 
                             <div className="pagesItemInNavs">
-                                <NavProps daley = "1250" over={mouseOver3} out={mouseOut3} class="nav-link pagesItemInNav" text="Pages" ico={<i className="arrowIcon3  far fa-chevron-down"></i>} />
+                                <NavProps daley="1250" over={mouseOver3} out={mouseOut3} class="nav-link pagesItemInNav" text="Pages" ico={<i className="arrowIcon3  far fa-chevron-down"></i>} />
 
 
 
@@ -165,39 +169,40 @@ function NavBar() {
                             </div>
 
 
-                            <NavProps daley = "1500" class="nav-link" text="Contact" />
+                            <NavProps daley="1500" class="nav-link" text="Contact" />
 
-                            <i data-aos="zoom-out"  data-aos-duration="1000" className="searchIco fad fa-search" ></i>
+                            <i data-aos="zoom-out" data-aos-duration="1000" className="searchIco fad fa-search" ></i>
 
-                            <div data-aos="zoom-out"  data-aos-duration="1000" id="nav-section-btn">
-                                <input id="nav-btn" type="button" value="Wallet Connect" />
-                                <i className="walletIco fal fa-wallet"></i>
-                            </div>
+
                         </ul>
+
+                        <div data-aos="zoom-out" data-aos-duration="1000" id="nav-section-btn">
+                            <input id="nav-btn" type="button" value="Wallet Connect" />
+                            <i className="walletIco fal fa-wallet"></i>
+                        </div>
                     </div>
 
                 </div>
             </nav>
-            
-            <div  className="frontPageContianer">
+
+            <div className="frontPageContianer">
 
 
 
                 <h6 className="NETSTORM"><span className="logoColor">NETSTORM</span> <span><i className="wordIco far fa-horizontal-rule" ></i> </span></h6>
-                <h1 data-aos= "fade-right" data-aos-duration="500" className="header">Discover, collect,</h1>
-                <h1 data-aos= "fade-right" data-aos-duration="1000" className="header">and sell</h1>
-                <h1 data-aos= "fade-right" data-aos-duration="1500" className="header">extraordinary NFTs</h1>
-                <p  data-aos= "fade-up" data-aos-duration="1000" className="para" >Explore on the world's best & largest NFT marketplace</p>
+                <h1 data-aos="fade-right" data-aos-duration="500" className="header">Discover, collect,</h1>
+                <h1 data-aos="fade-right" data-aos-duration="1000" className="header">and sell</h1>
+                <h1 data-aos="fade-right" data-aos-duration="1500" className="header">extraordinary NFTs</h1>
+                <p data-aos="fade-up" data-aos-duration="1000" className="para" >Explore on the world's best & largest NFT marketplace</p>
 
                 <div id="front-section-btn">
-                    <div data-aos= "fade-up" data-aos-duration="1000" className="rocket-btn">
-                        <input id="startFrontPage-btn1" type="button" value="Explore" />
-                        <i id="rocket" className="fal fa-rocket"></i>
+                    <div data-aos="fade-up" data-aos-duration="1000" className="rocket-btn">
+                        <div id="startFrontPage-btn1" type="button"> <i id="rocket" className="fal fa-rocket"></i> Explore</div>
+                        
                     </div>
 
-                    <div data-aos= "fade-up" data-aos-duration="1000" className="note-btn">
-                        <input id="startFrontPage-btn2" type="button" value="Create" />
-                        <i id="note" className="fal fa-clipboard"></i>
+                    <div data-aos="fade-up" data-aos-duration="1000" className="note-btn">
+                        <div id="startFrontPage-btn2" type="button" > <i id="note" className="fal fa-clipboard"></i> Create</div>
                     </div>
 
                 </div>

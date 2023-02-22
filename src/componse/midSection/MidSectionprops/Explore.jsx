@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import ViewAllPara from "../data/ViewAllPara";
 
 
 function ExploreCard(props) {
     return (
-        <div data-aos= "fade-up" data-aos-duration="1000" id={props.id} class="card exploree" style={{ width: "17.9rem" }}>
+        <div data-aos="fade-up" data-aos-duration="1000" id={props.id} class="card exploree" style={{ width: "17.9rem" }}>
 
             <img id="card-collection-background" src={props.background} class="card-img-top" alt="..." />
 
@@ -22,57 +22,118 @@ function ExploreCard(props) {
 function Explore() {
 
 
-    function clicked(clickedd) {
-        var btn = document.getElementById("loadMore-Btn");
-        var btn1 = document.getElementById("loadMore-Btn1");
-        var Showcards1 = document.querySelector(".cards1");
+
+    // function clicked(clickedd) {
+    //     var btn = document.getElementById("loadMore-Btn");
+    //     var btn1 = document.getElementById("loadMore-Btn1");
+    //     var Showcards1 = document.querySelector(".cards1");
 
 
-        if (clickedd) {
-            Showcards1.style.display = "inline-flex"
-            btn.style.display = "none"
-            btn1.style.display = "inline-block"
+    //     if (clickedd) {
+    //         Showcards1.style.display = "inline-flex"
+    //         btn.style.display = "none"
+    //         btn1.style.display = "flex"
+    //     }
+    // }
+
+    // function clicked1(clickedd) {
+    //     var btn1 = document.getElementById("loadMore-Btn1");
+    //     // var btn2 = document.getElementById("loadMore-Btn2");
+    //     var ShowCards2 = document.querySelector(".cards2");
+
+
+    //     if (clickedd) {
+    //         ShowCards2.style.display = "inline-flex"
+    //         btn1.style.display = "none"
+    //         // btn2.style.display = "inline-block"
+    //     }
+    // }
+
+
+    // function clicked2(clickedd) {
+    //     var btn = document.getElementById("loadMore-Btn");
+    //     // var btn2 = document.getElementById("loadMore-Btn2");
+    //     var Showcards1 = document.querySelector(".cards1");
+    //     var ShowCards2 = document.querySelector(".cards2");
+
+    //     if (clickedd) {
+    //         Showcards1.style.display = "none"
+    //         ShowCards2.style.display = "none"
+    //         btn.style.display = "inline-flex"
+    //         // btn2.style.display = "none"
+    //     }
+    // }
+
+    const [classChanger, setClassChanger] = useState(() => {
+        return {
+            cards1: "",
+            cards2: ""
         }
+    });
+
+    const [btnChanger, setBtnChanger] = useState(() => {
+        return {
+            btn1: <a onClick={FirstLoadMore} id="loadMore-Btn" class="btn btn-primary" >Load More</a>,
+            btn2: ""
+        }
+    });
+
+    function FirstLoadMore() {
+        setClassChanger(() => {
+            return {
+                cards1: "loadedCards1",
+                cards2: ""
+            }
+        })
+
+        setBtnChanger(() => {
+            return {
+                btn1: "",
+                btn2: <a onClick={SecLoadMore} id="loadMore-Btn1" class="btn btn-primary" >Load More</a>
+            }
+        })
     }
 
-    function clicked1(clickedd) {
-        var btn1 = document.getElementById("loadMore-Btn1");
-        // var btn2 = document.getElementById("loadMore-Btn2");
-        var ShowCards2 = document.querySelector(".cards2");
+    function SecLoadMore(params) {
+        setClassChanger(() => {
+            return {
+                cards1: "loadedCards1",
+                cards2: "loadedCards2"
+            }
+        })
 
-
-        if (clickedd) {
-            ShowCards2.style.display = "inline-flex"
-            btn1.style.display = "none"
-            // btn2.style.display = "inline-block"
-        }
+        setBtnChanger(() => {
+            return {
+                btn1: "",
+                btn2: ""
+            }
+        })
     }
 
 
-    function clicked2(clickedd) {
-        var btn = document.getElementById("loadMore-Btn");
-        // var btn2 = document.getElementById("loadMore-Btn2");
-        var Showcards1 = document.querySelector(".cards1");
-        var ShowCards2 = document.querySelector(".cards2");
 
-        if (clickedd) {
-            Showcards1.style.display = "none"
-            ShowCards2.style.display = "none"
-            btn.style.display = "inline-block"
-            // btn2.style.display = "none"
-        }
-    }
 
 
     return (
-        <div data-aos= "fade-up" data-aos-duration="1000" className="explore">
+        <div data-aos="fade-up" data-aos-duration="1000" className="explore">
 
-            <h6 className="titles"><span className="logoColor">EXCLUSIVE ASSETS</span> <span><i className="wordIco far fa-horizontal-rule" ></i> </span></h6>
+            <div data-aos="fade-down" data-aos-duration="1000" id="view-all" class="explore-viewAll aos-init aos-animate">
+                <div class="live-title-container">
+                    <h6 data-aos="fade-down" data-aos-duration="1000" class="AUCTIONS aos-init aos-animate">
+                        <span class="logoColor">EXCLUSIVE ASSETS</span>
+                        <span><i class="wordIco far fa-horizontal-rule"></i> </span>
+                    </h6>
+                    <h1 data-aos="fade-down" data-aos-duration="1000" class="h-Mid aos-init aos-animate">Explore</h1>
+                </div>
+                <p class="liveText">View All<i class="viewAllIco fas fa-arrow-right"></i></p>
+            </div>
+
+            {/* <h6 className="titles"><span className="logoColor">EXCLUSIVE ASSETS</span> <span><i className="wordIco far fa-horizontal-rule" ></i> </span></h6>
             <h1 className="h-Mid">Explore</h1>
 
             <div id="view-all">
                 <ViewAllPara View="View All" />
-            </div>
+            </div> */}
             <div className="moreCards">
 
                 <div className="cardsHolder">
@@ -119,7 +180,7 @@ function Explore() {
 
                     </div>
 
-                    <div className="cards1 w3-container w3-animate-bottom">
+                    <div id={classChanger.cards1} className="cards1 w3-container w3-animate-bottom">
                         <ExploreCard
                             id="Card-ExploreSection1"
                             background="https://netstrom-angular.theme-land.com/assets/img/auction_5.jpg"
@@ -161,7 +222,7 @@ function Explore() {
                         />
                     </div>
 
-                    <div className="cards2 w3-container w3-animate-bottom">
+                    <div id={classChanger.cards2} className="cards2 w3-container w3-animate-bottom">
                         <ExploreCard
                             id="Card-ExploreSection2"
                             background="https://netstrom-angular.theme-land.com/assets/img/auction_9.jpg"
@@ -204,8 +265,10 @@ function Explore() {
                     </div>
                 </div>
             </div>
-            <a onClick={clicked} id="loadMore-Btn" class="btn btn-primary" >Load More</a>
-            <a onClick={clicked1} id="loadMore-Btn1" class="btn btn-primary" >Load More</a>
+
+            {btnChanger.btn1}
+            {btnChanger.btn2}
+
             {/* <a onClick={clicked2} id="loadMore-Btn2" class="btn btn-primary" >Show Less</a> */}
 
         </div>

@@ -7,23 +7,24 @@ import Cards from "../data/Cards";
 
 function LiveAuctionsMID() {
     return (
-        <div>
-            <div className="startMidSection">
-                <h6 data-aos="fade-down"  data-aos-duration="1000" className="AUCTIONS"><span className="logoColor">AUCTIONS</span> <span><i className="wordIco far fa-horizontal-rule" ></i> </span></h6>
-                <h1 data-aos="fade-down"  data-aos-duration="1000" className="h-Mid">Live Auctions</h1>
+        <div className="live-container">
 
-                <div data-aos="fade-down"  data-aos-duration="1000" id="view-all">
+            <div className="startMidSection">
+
+                <div data-aos="fade-down" data-aos-duration="1000" id="view-all">
+                    <div className="live-title-container">
+                        <h6 data-aos="fade-down" data-aos-duration="1000" className="AUCTIONS"><span className="logoColor">AUCTIONS</span> <span><i className="wordIco far fa-horizontal-rule" ></i> </span></h6>
+                        <h1 data-aos="fade-down" data-aos-duration="1000" className="h-Mid">Live Auctions</h1>
+                    </div>
                     <ViewAllPara View="View All" />
                 </div>
             </div>
 
-
-            <div  className="cards">
+            <div className="cards">
 
                 <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
 
-
-                    <div data-aos="fade-up"  data-aos-duration="1000" class="carousel-inner">
+                    <div data-aos="fade-up" data-aos-duration="1000" class="carousel-inner">
 
                         <div class="carousel-item active">
                             <Cards />

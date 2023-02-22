@@ -14,8 +14,19 @@ function Type(props) {
 function HowItWork() {
     return (
         <div>
-            <h6 data-aos= "fade-right" data-aos-duration="1000" className="titles"><span className="logoColor">HOW IT WORK</span> <span><i className="wordIco far fa-horizontal-rule" ></i> </span></h6>
-            <h1 data-aos= "fade-right" data-aos-duration="1000" className="h-Mid">Create and sall your NEFs</h1>
+            
+            <div data-aos="fade-down" data-aos-duration="1000" id="view-all" class="howItwork-viewAll aos-init aos-animate">
+                    <div class="live-title-container">
+                        <h6 data-aos="fade-down" data-aos-duration="1000" class="AUCTIONS aos-init aos-animate">
+                            <span class="logoColor">HOW IT WORK</span>
+                            <span><i class="wordIco far fa-horizontal-rule"></i> </span>
+                        </h6>
+                        <h1 data-aos="fade-down" data-aos-duration="1000" class="h-Mid aos-init aos-animate">Create and sall your NEFs</h1>
+                    </div>
+                </div>
+
+            {/* <h6 data-aos= "fade-right" data-aos-duration="1000" className="titles"><span className="logoColor">HOW IT WORK</span> <span><i className="wordIco far fa-horizontal-rule" ></i> </span></h6>
+            <h1 data-aos= "fade-right" data-aos-duration="1000" className="h-Mid">Create and sall your NEFs</h1> */}
 
             <div className="continer">
                 <div id="howItworkSection">
