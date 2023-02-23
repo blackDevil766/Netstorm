@@ -32,8 +32,16 @@
 
 .path {
     stroke-dasharray: 2000;
-    animation: dash 20s linear;
+    animation: dash 20s linear infinite;
     width: 130px;
+    transform: translate(13px, 3px);
+}
+
+.footerPath {
+    stroke-dasharray: 2000;
+    animation: dash 20s linear infinite;
+    width: 130px;
+    transform: translate(-34px, 3px);
 }
 
 
@@ -168,7 +176,7 @@ body {
     display: inline-flex;
     position: relative;
     /* left: 114px; */
-    bottom: 5px;
+    /* bottom: 5px; */
     /* width: 50%; */
 }
 
